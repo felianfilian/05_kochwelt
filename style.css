@@ -1,0 +1,78 @@
+/* global color 
+green - rgb(0, 128, 0)
+lightgrey - rgb(239, 239, 239)
+darkgrey - rgb(64, 59, 59)
+*/
+
+body {
+  overflow-x: hidden;
+
+  margin: 0;
+
+  font-family: "Raleway";
+}
+
+/* raleway-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./fonts/raleway-v28-latin-regular.eot"); /* IE9 Compat Modes */
+  src: url("./fonts/raleway-v28-latin-regular.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */ url("/fonts/raleway-v28-latin-regular.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("/fonts/raleway-v28-latin-regular.woff")
+      format("woff"),
+    /* Modern Browsers */ url("./fonts/raleway-v28-latin-regular.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url("./fonts/raleway-v28-latin-regular.svg#Raleway") format("svg"); /* Legacy iOS */
+}
+
+/* raleway-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./fonts/raleway-v28-latin-700.eot"); /* IE9 Compat Modes */
+  src: url("./fonts/raleway-v28-latin-700.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */ url("../fonts/raleway-v28-latin-700.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("./fonts/raleway-v28-latin-700.woff")
+      format("woff"),
+    /* Modern Browsers */ url("./fonts/raleway-v28-latin-700.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */ url("./fonts/raleway-v28-latin-700.svg#Raleway")
+      format("svg"); /* Legacy iOS */
+}
+
+body {
+  padding: 30px 100px;
+}
+
+/* Header */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar {
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+.navbar a {
+  padding: 10px 0;
+  color: rgb(95, 95, 95);
+  font-size: 24px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.navbar a:hover {
+  border-bottom: 6px solid rgb(0, 121, 0);
+  color: rgb(0, 121, 0);
+}
