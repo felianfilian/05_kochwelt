@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe Testseite</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="init()">
+  <button onclick="change(0)">Salat</button>
+  <button onclick="change(1)">Spaghetti</button>
+
+  <script>
+    let recipeIndex = 0;
+  </script>
+
+
+  <style>
+    .img-recipe {
+      object-fit: cover;
+
+      width: 100%;
+      height: 240px;
+
+      border-radius: 8px;
+    }
+
+    .fs-18 {
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    .mb-20 {
+      margin-bottom: 20px;
+    }
+
+    .mr-20 {
+      margin-right: 20px;
+    }
+
+    .portions input {
+      padding: 15px;
+
+      border: 3px solid rgb(239, 239, 239);
+      border-radius: 5px;
+      outline-width: 0;
+    }
+
+    .portions input:focus {
+      border: 3px solid rgb(0, 128, 0);
+      outline-width: 0;
+    }
+
+    .btn-green {
+      padding: 15px 30px;
+
+      background-color: rgb(0, 121, 0);
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      cursor: pointer;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .btn-green:hover {
+      background-color: rgb(0, 148, 0);
+    }
+
+    #ingredients {
+      padding-inline-start: 0;
+    }
+
+    #ingredients li {
+      padding: 16px 16px;
+
+      border-radius: 8px;
+      list-style: none;
+    }
+
+    #ingredients li:nth-child(odd) {
+      background-color: rgb(239, 239, 239);
+    }
+
+    .avatar {
+      display: flex;
+      align-items: center;
+    }
+
+    .img-avatar {
+      width: 100px;
+      height: 100pxs;
+
+      border-radius: 50%;
+    }
+
+    .txt-avatar {
+      color: rgb(64, 59, 59);
+      font-size: 28px;
+    }
+
+    @media(max-width: 768px) {
+      body {
+        margin: 0;
+        padding: 32px 16px;
+      }
+
+      .mr-20 {
+        margin-right: 10px;
+      }
+
+      .portions input {
+        padding: 10px;
+        width: 30px
+      }
+
+      .btn-green {
+        padding: 10px 15px;
+      }
+    }
+  </style>
+
+
+  <!-- 
+Ab hier beginnt das Rezept 
+-->
+
+  <div class="recipe">
+    <h1 id="recipe-title" class="mb-20">Pad Thai/</h1>
+      <img id="recipe-img" class="img-recipe mb-20" src="img/pexels-padthai.jpg" alt="padthai">
+
+      <div class="recipe-info">
+        <div>
+          <img src="" alt="">
+        </div>
+      </div>
+
+      <div class="portions mb-20">
+        <span class="mr-20 fs-18">Zutaten für</span>
+        <input id="person-count" class="mr-20 fs-18" type="number" min="1" max="100" value="4"
+          onchange="changePersons()">
+        <button class=" btn-green fs-18" onclick="changePersons()">Portionen</button>
+      </div>
+
+      <ul id="ingredients" class="mb-20 fs-18">
+        <li>2 Schalotten</li>
+        <li>2 Knoblauchzehen</li>
+        <li>1 Frühlingszwiebel</li>
+        <li>100g fester Tofu</li>
+        <li>2 Eier</li>
+        <li>2 EL geröstete Cashewkerne</li>
+        <li>100g Mungobohnensprossen</li>
+        <li>1 Limette</li>
+
+        <h2>Sauce</h2>
+        <li>1 EL Kokosblütenzucker</li>
+        <li>1 TL Tamarindenpaste</li>
+        <li>4 EL Fischsauce</li>
+        <li>0.5 TL Rote Chiliflocken</li>
+        <li>2 EL Öl zum Braten</li>
+        <li>8 mittelgroße rohe Garnelen</li>
+      </ul>
+  </div>
+
+  <h2 class="mb-20">Zubereitung</h2>
+  <p id="recipe-instructions" class="mb-20 fs-18">Die Nudeln in lauwarmem Wasser 15 Minuten einweichen..
+    <br>
+    Die Schalotten schälen, halbieren und in feine Ringe schneiden.
+    Den Knoblauch schälen und feinhacken. Das Grüne der Frühlingszwiebel in 3cm lange Stücke schneiden, diese je nach
+    Größe längs halbieren oder vierteln.
+    Das Weiße fein hacken.
+    <br>
+    Den Tofu in 0,5cm Würfel schneiden. Die Eier in einer Schale aufschlagen und verquirlen. Die Erdnüsse im Mörser grob
+    zerstoßen.
+    Die Mungbohnensprossen waschen und putzen. Die Limette in Achtel schneiden.
+    <br>
+    Die Nudeln aus dem Wasser nehmen und abtropfen lassen.
+    <br>
+    Für die Saucenmischung Kokosblütenzucker, Tamarindenmark, Fischsauce und die Chiliflocken zusammen mit 200ml Wasser
+    in einer Schale verrühren.
+    <br>
+    Zum Braten am besten eine flache Antihaftpfanne mit 28cm Durchmesser verwenden. Damit kann man verhindern, dass das
+    Ei anbrennt.
+    Außerdem einen flachen Holzspatel verwenden.
+    <br>
+    Die Pfanne auf mittlerer Stufe erhitzen, 2 EL Öl hineingeben.
+    Die Schalotten und das Weiße der Frühlingszwiebeln andünsten, nach 30 Sekunden den Knoblauch hinzugeben.
+    Darauf achten, dass nichts braun wird. Den Tofu dazugeben und unter Rühren weitere 30 Sekunden braten. Jetzt die
+    Nudeln hinzugeben und alles gründlich vermischen.
+    ⅔ der Saucenmischung dazugeben und wieder gründlich vermischen.
+    <br>
+    Die Nudeln sollten jetzt weich werden, aber nicht matschig.
+    Sie dürfen aber auch nicht mehr zäh sein. Gegebenenfalls noch von der restlichen Saucenmischung oder etwas heißes
+    Wasser zugeben.
+    <br>
+    Mit dem Holzspatel die Nudelmasse in eine Hälfte der Pfanne schieben.
+    Auf die freie Fläche einen Spritzer Öl geben, die Garnelen hinzugeben und von beiden Seiten 30 Sekunden anbraten.
+    Anschließend auf die Seite mit den Nudeln schieben.
+    <br>
+    Wieder einen Spritzer Öl auf die freie Fläche geben und die Eimasse hineingleiten lassen, kurz stocken lassen und
+    dann mit dem Spatel zerteilen.
+    Es sollte mehr einem Rührei als einem Omelett ähneln. Sobald das Ei zu einer festen Masse geworden ist, mit der
+    Nudelmasse vermengen.
+    <br>
+    Schliesslich die Mungbohnensprossen, die Erdnüsse und das Grüne der Frühlingszwiebeln hinzufügen.
+    Alles nochmals gründlich vermischen und solange weiter braten, bis die Frühlingszwiebeln etwas weich geworden sind.
+    Servieren und mit Limette abschmecken. Eventuell noch mit etwas Chiliflocken nachwürzen.
+  </p>
+
+  <h2 class="mb-20">Rezept erstellt von</h2>
+  <div class="avatar">
+    <img id="avatar-img" class="img-avatar mr-20" src="./img/avatar-pauline.jpg" alt="">
+    <span id="avatar-name" class="txt-avatar">Pauline</span>
+  </div>
+
+  <script src="recipe-script.js"></script>
+
+
+</body>
+
+</html>

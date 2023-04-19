@@ -10,6 +10,14 @@
 </head>
 
 <body onload="init()">
+  <button onclick="change(0)">Salat</button>
+  <button onclick="change(1)">Spaghetti</button>
+  <button onclick="change(2)">Pad Thai</button>
+  
+  <script>
+   let recipeIndex = 0;
+  </script>
+
 
   <style>
     .img-recipe {
@@ -32,6 +40,29 @@
 
     .mr-20 {
       margin-right: 20px;
+    }
+
+    .recipe-info {   
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .recipe-infobox {
+      display: flex;
+      align-items: center;
+
+      padding: 8px;
+
+      background-color: rgb(239, 239, 239);
+      border-radius: 5px;
+    }
+
+    .recipe-infobox img {
+      width: 24px;
+      height: 24px;
+
+      margin-right: 8px;
     }
 
     .portions input {
@@ -84,8 +115,10 @@
     }
 
     .img-avatar {
+      object-fit: cover;
+
       width: 100px;
-      height: 100pxs;
+      height: 100px;
 
       border-radius: 50%;
     }
@@ -94,15 +127,50 @@
       color: rgb(64, 59, 59);
       font-size: 28px;
     }
+
+    @media(max-width: 768px) {
+      body {
+        margin: 0;
+        padding: 32px 16px;
+      }
+      
+      .mr-20 {
+        margin-right: 10px;
+      }
+
+      .portions input {
+        padding: 10px;
+        width: 30px
+      }
+
+      .btn-green {
+        padding: 10px 15px;
+      }
+    }
+
   </style>
 
-  <div class="recipe">
-    <h1 class="mb-20">Griechischer Bauernsalat</h1>
-    <img class="img-recipe mb-20" src="img/salad.jpg" alt="">
 
-    <div class="recipe-info">
-      <div>
-        <img src="" alt="">
+<!-- 
+Ab hier beginnt das Rezept 
+-->
+
+  <div class="recipe">
+    <h1 id="recipe-title" class="mb-20">Griechischer Bauernsala</h1>
+    <img id="recipe-img" class="img-recipe mb-20" src="img/salad.jpg" alt="">
+
+    <div class="recipe-info mb-20">
+      <div class="recipe-infobox">
+        <img src="img/icons/clock-regular.svg" alt="">
+        <span>15 min</span>
+      </div>
+      <div class="recipe-infobox">
+        <img src="img/icons/brain-solid.svg" alt="">
+        <span>simpel</span>
+      </div>
+      <div class="recipe-infobox">
+        <img src="img/icons/calendar-alt-regular.svg" alt="">
+        <span>18.04.2023</span>
       </div>
     </div>
 
@@ -127,7 +195,7 @@
   </div>
 
   <h2 class="mb-20">Zubereitung</h2>
-  <p class="mb-20 fs-18">Gurke waschen und ungeschält in dünne Scheiben schneiden.
+  <p id="recipe-instructions" class="mb-20 fs-18">Gurke waschen und ungeschält in dünne Scheiben schneiden.
     <br>
     Paprika waschen, entkernen und in dünne Streifen schneiden.
     <br>
@@ -142,8 +210,8 @@
 
   <h2 class="mb-20">Rezept erstellt von</h2>
   <div class="avatar">
-    <img class="img-avatar mr-20" src="img/avatar-dennis.jpg" alt="">
-    <span class="txt-avatar">Dennis</span>
+    <img id="avatar-img" class="img-avatar mr-20" src="img/avatar-dennis.jpg" alt="">
+    <span id="avatar-name" class="txt-avatar">Dennis</span>
   </div>
 
   <script src="recipe-script.js"></script>
